@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true"
+    android:padding="16dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardCornerRadius="6dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/icon_apk" />
+
+                <!--<TextView-->
+                <!--android:id="@+id/lblHeader"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:padding="20dp"-->
+                <!--android:text="Login"-->
+                <!--android:textColor="@color/primary"-->
+                <!--android:textSize="36sp"-->
+                <!--android:textStyle="bold" />-->
+
+                <EditText
+                    android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.7"
+                    android:background="@drawable/button"
+                    android:hint="Email"
+                    android:padding="10dp"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.7"
+                    android:background="@drawable/button"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/button"
+
+                    android:text="Sign In"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/link_signup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center"
+                    android:text="Belum punya akun? Buat disini"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16dip" />
+
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminateDrawable="@drawable/progress"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</ScrollView>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TIMA Umroh</string>
+    <string name="action_settings">Settings</string>
+    <string name="about"></string>
+    <string name="title">PT. Tima Wisata Amanah</string>
+    <string name="alamat">Jl. KH Abdullah Syafei No 68 RT 06/09 Kelurahan Bukit Duri, Kecamatan Tebet, Jakarta Selatan</string>
+    <string name="isi">PT. Timah Amanah Prima Wisata, atau yang lebih dikenal dengan Tima Wisata, berdiri pada bulan Februari tahun 2000 dengan usaha dibidang perjalanan keseluruh dunia, khususnya Wilayah Timur Tengah dan Afrika. Sudah 13 tahun tumbuh berkembang, Tima Wisata menunjukan citra bisnis yang kuat.</string>
+    <string name="isi2">Berkolaborasi dengan travel agent domestik dan internasional Di Asean. Dalam bekerja, Tima Wisata lebih mengedepankan amanah dari pelanggan untuk memberikan pelayanan terbaik dan sesuai dengan ketentuan/perjanjian yang telah di sepakati. Kamu siap bekerja keras demi kepuasan pelanggan.</string>
+    <string name="isi3">Fitur umroh, dilengkapidengan fitur informasi paket ibadah umroh dan administrasi pendaftaran calon jamaah (awal). Informasi paket ibadah umroh, menyediakan informasi tentang paket - paket umroh yang dapat dipilih secara online oleh jamaah tanpa perlu mendatangi kantor travel. Memudahkan calon jamaah untuk memilih paket ibadah umroh sesuai keinginan dalam genggaman.</string>
+    <string name="title_activity_jamaah_activtiy">Identitas Jamaah</string>
+</resources>

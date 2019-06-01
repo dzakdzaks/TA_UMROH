@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".user.ProfilrActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/lll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/input_nama"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Name"
+                            android:inputType="textCapWords"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/darker_gray" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/input_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="email"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/darker_gray" />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/input_alamat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top|left"
+                            android:hint="Alamat"
+                            android:inputType="textMultiLine"
+                            android:lines="4"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/darker_gray" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/input_no_telp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Nomor Telpon (+62)"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/darker_gray" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/input_ttl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="TTL"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/darker_gray" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/input_goldar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Golongan Darah"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/darker_gray" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+                <Button
+                    android:id="@+id/btn_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="Save"
+                    android:visibility="gone"
+                    android:layout_below="@+id/lll"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:padding="6dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Change Password     🔑"
+                        android:textSize="22sp" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/input_curr_pass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Password Sekarang"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/darker_gray" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/input_pass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Password Baru"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/darker_gray" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/input_pass2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Ketik Ulang Password Baru"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/darker_gray" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <Button
+                    android:layout_below="@+id/ll"
+                    android:id="@+id/btn_edit_pass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="Change Password"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

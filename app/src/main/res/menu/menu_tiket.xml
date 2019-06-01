@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/semuaTiket"
+        android:orderInCategory="100"
+        android:title="Semua Tiket"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/belumBayar"
+        android:orderInCategory="200"
+        android:title="Belum Bayar"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/proses"
+        android:orderInCategory="300"
+        android:title="Di Proses"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/sudahBayar"
+        android:orderInCategory="300"
+        android:title="Sudah Bayar"
+        app:showAsAction="never" />
+</menu>

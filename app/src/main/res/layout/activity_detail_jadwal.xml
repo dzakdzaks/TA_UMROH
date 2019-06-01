@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    tools:context=".home.DetailJadwalActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false">
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardBukti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/tvTitleBukti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/backtext"
+                android:text="Bukti Pembayaran"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_below="@+id/tvTitleBukti"
+                    android:id="@+id/imgBukti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="6dp"
+                    android:src="@drawable/ic_image_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/tvketerangan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgBukti"
+                    android:text="No ATM - Nama Bank - Nama Pentransfer"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:layout_below="@+id/cardBukti"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardPaket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/tvPaket"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/backtext"
+                        android:text="Premium"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_access_time_black_24dp" />
+
+                        <TextView
+                            android:id="@+id/tvDurasi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="4dp"
+                            android:text="9 Hari"
+                            android:textAlignment="center"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/tvPaket"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@color/lightgray" />
+
+                    <LinearLayout
+                        android:id="@+id/ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_date_range_black_24dp" />
+
+                            <TextView
+                                android:id="@+id/tvKeberangkatan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:text="Berangkat 15 Juli 2001"
+                                android:textAlignment="center"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_transit" />
+
+                            <TextView
+                                android:id="@+id/tvTransit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:text="Transit"
+                                android:textAlignment="center"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_flight_black_24dp" />
+
+                            <TextView
+                                android:id="@+id/tvMaskapai"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:text="- Garuda Indonesia     - Saudi Arabia Airlines"
+                                android:textAlignment="center"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_location_on_black_24dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:text="Masjid Nabawi"
+                                android:textAlignment="center"
+                                android:textColor="@color/black" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="24dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvToMadinah"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="150 m"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-------------->"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="24dp"
+                                android:src="@drawable/ic_location_on_black_24dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:text="Madinah"
+                                android:textAlignment="center"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_location_on_black_24dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:text="Masjidil Haram"
+                                android:textAlignment="center"
+                                android:textColor="@color/black" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="24dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvToMekkah"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="800 m"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-------------->"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="24dp"
+                                android:src="@drawable/ic_location_on_black_24dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:text="Mekkah"
+                                android:textAlignment="center"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvHarga"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/backtext"
+                        android:gravity="center"
+                        android:text="Rp. 27.000.000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/tvBio"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/backtext"
+                        android:text="Biodata Pemesan"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/tvBio"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@color/lightgray" />
+
+                    <LinearLayout
+                        android:id="@+id/lll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view2"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nomor KTP"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvNoKTP"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="32750123918232"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nama Lengkap"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvNamaLengkap"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Alina Storm"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tempat Lahir"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvTempatLahir"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mars"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pekerjaan"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvPekerjaan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Superhero"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tanggal lahir"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvTanggalLahir"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="22 July 1995"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Jenis Kelamin"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvJenisKelamin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Perempuan"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Alamat"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvAlamat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mars, Dunia"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nama Ibu Kandung"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvNamaIbuKandung"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Widow Storm"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kewarganegaraan"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvKewarganegaraan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mars"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nomor Telepon"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvNoTelpon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+62823727 3283"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Email"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="alinastorm@gmail.com"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Keperluan"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true" />
+
+                            <TextView
+                                android:id="@+id/tvKeperluan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Umroh Premium"
+                                android:layout_alignParentEnd="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:layout_alignParentRight="true" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateDrawable="@drawable/progress"
+            android:visibility="gone" />
+    </RelativeLayout>
+</ScrollView>

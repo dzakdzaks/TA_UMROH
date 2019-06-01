@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true"
+    android:padding="16dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardCornerRadius="6dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:src="@mipmap/ic_launcher" />
+
+                <!--<TextView-->
+                <!--android:id="@+id/lblHeader"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:padding="20dp"-->
+                <!--android:text="Register"-->
+                <!--android:textColor="@color/primary"-->
+                <!--android:textSize="36sp"-->
+                <!--android:textStyle="bold" />-->
+
+                <EditText
+                    android:id="@+id/input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.7"
+                    android:background="@drawable/button"
+                    android:hint="Name"
+                    android:padding="10dp"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.7"
+                    android:background="@drawable/button"
+                    android:hint="Email"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.7"
+                    android:background="@drawable/button"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/input_alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.7"
+                    android:background="@drawable/button"
+                    android:hint="Alamat"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/input_ttl"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.7"
+                    android:background="@drawable/button"
+                    android:hint="Tempat Tanggal Lahir"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/input_goldar"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.7"
+                    android:background="@drawable/button"
+                    android:hint="Golongan Darah"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/input_notelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.7"
+                    android:background="@drawable/button"
+                    android:hint="Nomor Telpon (+62)"
+                    android:text="+62"
+                    android:inputType="numberSigned"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <Button
+                    android:id="@+id/btn_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/button"
+
+                    android:text="Sign Up"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/link_login"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center"
+                    android:text="Sudah punya akun? Login disini"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16dip" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminateDrawable="@drawable/progress"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</ScrollView>
