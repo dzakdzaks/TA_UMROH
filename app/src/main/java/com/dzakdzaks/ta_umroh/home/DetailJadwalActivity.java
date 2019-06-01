@@ -1,5 +1,6 @@
 package com.dzakdzaks.ta_umroh.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.dzakdzaks.ta_umroh.R;
 import com.dzakdzaks.ta_umroh.global.GlobalVariable;
+import com.dzakdzaks.ta_umroh.global.PreviewPhoto;
 import com.dzakdzaks.ta_umroh.session.UserSession;
 
 import java.text.ParseException;
@@ -143,6 +145,7 @@ public class DetailJadwalActivity extends AppCompatActivity {
 
 //        Toast.makeText(this, bukti + "\n" + keterangan, Toast.LENGTH_SHORT).show();
 
+
         Glide.with(getApplicationContext()).load(GlobalVariable.BASE_URL + bukti).into(imgBukti);
         tvketerangan.setText(keterangan);
 
@@ -166,6 +169,18 @@ public class DetailJadwalActivity extends AppCompatActivity {
         tvKewarganegaraan.setText(kewarganegaraan);
         tvNoTelpon.setText(noTelpon);
         tvKeperluan.setText(keperluan);
+
+        imgBukti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), PreviewPhoto.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.putExtra("image", bukti);
+                i.putExtra("keterangan", keterangan);
+                startActivity(i);
+            }
+        });
+
     }
 
     private void getDateFormat() {

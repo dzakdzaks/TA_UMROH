@@ -1,6 +1,7 @@
 package com.dzakdzaks.ta_umroh.admin.adapter;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,9 +10,12 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,11 +24,16 @@ import com.bumptech.glide.Glide;
 import com.dzakdzaks.ta_umroh.R;
 import com.dzakdzaks.ta_umroh.admin.ConfirmPaymentActivity;
 import com.dzakdzaks.ta_umroh.global.GlobalVariable;
+import com.dzakdzaks.ta_umroh.global.PreviewPhoto;
+import com.dzakdzaks.ta_umroh.home.KonfirmasiTiket;
+import com.dzakdzaks.ta_umroh.home.TiketActivity;
+import com.dzakdzaks.ta_umroh.home.response.ResponseAddTiket;
 import com.dzakdzaks.ta_umroh.home.response.ResponseTiketUpdateStatus;
 import com.dzakdzaks.ta_umroh.home.response.TiketItem;
 import com.dzakdzaks.ta_umroh.retrofit.ApiService;
 import com.dzakdzaks.ta_umroh.retrofit.InitLibrary;
 import com.dzakdzaks.ta_umroh.session.UserSession;
+import com.github.chrisbanes.photoview.PhotoView;
 
 import java.util.List;
 
@@ -54,7 +63,7 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewTiketHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final ViewTiketHolder holder, final int position) {
         final String namaTiket = tiket.get(position).getNama();
         final String namaUser = tiket.get(position).getNamaLengkap();
         final String harga = tiket.get(position).getHarga();
@@ -92,7 +101,7 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.View
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(view.getRootView().getContext() );
+                final AlertDialog.Builder alert = new AlertDialog.Builder(view.getRootView().getContext() );
                 alert.setTitle("Tiket Paket Umroh " + namaTiket + " " + namaUser);
                 alert.setIcon(R.mipmap.ic_launcher_round);
                 alert.setMessage("Anda yakin " + namaUser + " telah membayar tiket sebesar " + "Rp." + harga + " ?");
@@ -154,6 +163,60 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.View
 ////                i.putExtra("status", tiket.get(position).getStatus());
 ////                Toast.makeText(context, tiket.get(position).getIdTiket() + " clicked", Toast.LENGTH_SHORT).show();
 ////                context.startActivity(i);
+            }
+        });
+
+        holder.cardView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(final View view) {
+
+                final AlertDialog.Builder alert = new AlertDialog.Builder(view.getRootView().getContext());
+                alert.setTitle("Tolak Tiket");
+                alert.setIcon(R.mipmap.ic_launcher_round);
+                alert.setMessage("Anda yakin ingin menolak tiket ini?");
+                alert.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        Toast.makeText(context, "hapus", Toast.LENGTH_SHORT).show();
+                        ApiService apiService = InitLibrary.getInstance();
+                        Call<ResponseTiketUpdateStatus> call = apiService.sendStatusTiket(tiket.get(position).getIdTiket(), tiket.get(position).getIdUser(), tiket.get(position).getIdPaket(), "Belum Dibayar", tiket.get(position).getBukti(), tiket.get(position).getKeteranganBukti());
+                        call.enqueue(new Callback<ResponseTiketUpdateStatus>() {
+                            @Override
+                            public void onResponse(Call<ResponseTiketUpdateStatus> call, Response<ResponseTiketUpdateStatus> response) {
+                                if (response.isSuccessful()) {
+                                    Toast.makeText(context, "Sukses Menolak Tiket", Toast.LENGTH_SHORT).show();
+                                    context.startActivity(new Intent(context, ConfirmPaymentActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                    ((Activity) view.getContext()).finish();
+
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<ResponseTiketUpdateStatus> call, Throwable t) {
+                                Toast.makeText(context, "Gagal Menolak Tiket", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+                alert.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                alert.show();
+                return true;
+            }
+        });
+
+        holder.img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, PreviewPhoto.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.putExtra("image", tiket.get(position).getBukti());
+                i.putExtra("keterangan", tiket.get(position).getKeteranganBukti());
+                context.startActivity(i);
             }
         });
     }

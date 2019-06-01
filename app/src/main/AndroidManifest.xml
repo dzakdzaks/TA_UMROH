@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".home.KonfirmasiTiket"></activity>
+        <activity android:name=".global.PreviewPhoto"
+            android:theme="@style/AppTheme.Fullscreen"/>
+                <activity android:name=".home.KonfirmasiTiket" />
         <activity android:name=".admin.ListJamaahActivity" />
         <activity android:name=".admin.JadwalAdminActivity" />
         <activity android:name=".home.DashboardActivity" />

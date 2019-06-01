@@ -125,6 +125,13 @@ public interface ApiService {
     );
 
     @FormUrlEncoded
+    @POST("tiket_delete.php")
+    Call<ResponseAddTiket> deleteTiket(
+            @Field("id") String id
+    );
+
+
+    @FormUrlEncoded
     @POST("tiket_update_status.php")
     Call<ResponseTiketUpdateStatus> sendStatusTiket(
             @Field("id") String idTiket,
