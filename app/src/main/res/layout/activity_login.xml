@@ -44,7 +44,9 @@
                 <!--android:textColor="@color/primary"-->
                 <!--android:textSize="36sp"-->
                 <!--android:textStyle="bold" />-->
-
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/input_email"
                     android:layout_width="match_parent"
@@ -58,7 +60,11 @@
                     android:inputType="textEmailAddress"
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/darker_gray" />
-
+                </android.support.design.widget.TextInputLayout>
+               <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true">
                 <EditText
                     android:id="@+id/input_password"
                     android:layout_width="match_parent"
@@ -72,7 +78,7 @@
                     android:padding="10dp"
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/darker_gray" />
-
+                </android.support.design.widget.TextInputLayout>
                 <Button
                     android:id="@+id/btn_login"
                     android:layout_width="match_parent"
