@@ -49,8 +49,8 @@ import retrofit2.Response;
 
 public class JamaahActivtiy extends AppCompatActivity {
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
+//    @BindView(R.id.toolbar)
+//    Toolbar toolbar;
     @BindView(R.id.edtNoKTP)
     EditText edtNoKTP;
     @BindView(R.id.edtNamaLengkap)
@@ -98,8 +98,8 @@ public class JamaahActivtiy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jamaah_activtiy);
         ButterKnife.bind(this);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         setView();
     }

@@ -21,6 +21,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.dzakdzaks.ta_umroh.R;
@@ -48,6 +49,8 @@ public class KonfirmasiTiket extends AppCompatActivity {
     ImageView imgBukti;
     @BindView(R.id.btnUpload)
     Button btnUpload;
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
 
     Bitmap bitmap;
     private static final int IMAGE = 100;
@@ -85,6 +88,10 @@ public class KonfirmasiTiket extends AppCompatActivity {
     }
 
     private void upload() {
+        progressBar.setVisibility(View.VISIBLE);
+        inputKeterangan.setEnabled(false);
+        imgBukti.setEnabled(false);
+        btnUpload.setEnabled(false);
         String ket = inputKeterangan.getText().toString();
         String newImage = convertToString();
         ApiService apiService = InitLibrary.getInstance();
@@ -94,6 +101,10 @@ public class KonfirmasiTiket extends AppCompatActivity {
             public void onResponse(Call<ResponseTiketUpdateStatus> call, Response<ResponseTiketUpdateStatus> response) {
                 String msg = response.body().getMsg();
                 if (response.isSuccessful()) {
+                    progressBar.setVisibility(View.GONE);
+                    inputKeterangan.setEnabled(true);
+                    imgBukti.setEnabled(true);
+                    btnUpload.setEnabled(true);
                     Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
                     onBackPressed();
                 }
@@ -101,6 +112,10 @@ public class KonfirmasiTiket extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseTiketUpdateStatus> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
+                inputKeterangan.setEnabled(true);
+                imgBukti.setEnabled(true);
+                btnUpload.setEnabled(true);
                 Toast.makeText(getApplicationContext(), t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -110,7 +125,7 @@ public class KonfirmasiTiket extends AppCompatActivity {
         final CharSequence[] items = {"Take Photo", "Choose from Library",
                 "Cancel"};
         final AlertDialog.Builder builder = new AlertDialog.Builder(KonfirmasiTiket.this);
-        builder.setTitle("Profile Photo");
+        builder.setTitle("Menu Image");
         builder.setItems(items, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int item) {

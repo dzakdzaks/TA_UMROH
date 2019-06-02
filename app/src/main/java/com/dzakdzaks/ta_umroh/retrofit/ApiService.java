@@ -81,6 +81,40 @@ public interface ApiService {
     );
 
     @FormUrlEncoded
+    @POST("paket_delete.php")
+    Call<ResponsePaket> requestDeletePaket(
+            @Field("id") String id
+    );
+
+
+    @FormUrlEncoded
+    @POST("paket_add.php")
+    Call<ResponsePaket> requestAddPaket(
+            @Field("nama") String name,
+            @Field("durasi") String email,
+            @Field("transit") String password,
+            @Field("jarak_to_madinah") String alamat,
+            @Field("jarak_to_mekah") String ttl,
+            @Field("maskapai") String goldar,
+            @Field("harga") String notelp,
+            @Field("keberangkatan") String role
+    );
+
+    @FormUrlEncoded
+    @POST("paket_edit.php")
+    Call<ResponsePaket> requestEditPaket(
+            @Field("id") String id,
+            @Field("nama") String name,
+            @Field("durasi") String email,
+            @Field("transit") String password,
+            @Field("jarak_to_madinah") String alamat,
+            @Field("jarak_to_mekah") String ttl,
+            @Field("maskapai") String goldar,
+            @Field("harga") String notelp,
+            @Field("keberangkatan") String role
+    );
+
+    @FormUrlEncoded
     @POST("tiket_get.php")
     Call<ResponseTiket> requestGetTiket(
             @Field("id") String id
@@ -140,6 +174,15 @@ public interface ApiService {
             @Field("status") String status,
             @Field("image") String img,
             @Field("keterangan") String keterangan
+    );
+
+    @FormUrlEncoded
+    @POST("tiket_konfirmasi.php")
+    Call<ResponseTiketUpdateStatus> confirmTiket(
+            @Field("id") String idUser,
+            @Field("id_user") String idser,
+            @Field("id_paket") String idPaket,
+            @Field("status") String status
     );
 
     @FormUrlEncoded

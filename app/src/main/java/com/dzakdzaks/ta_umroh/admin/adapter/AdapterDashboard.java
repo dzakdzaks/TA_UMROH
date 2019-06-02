@@ -112,7 +112,7 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.View
                         String idUser = tiket.get(position).getIdUser();
                         String idPaket = tiket.get(position).getIdPaket();
                         ApiService service = InitLibrary.getInstance();
-                        Call<ResponseTiketUpdateStatus> call = service.sendStatusTiket(idTiket, idUser, idPaket, "Sudah Dibayar", bukti, keterangan);
+                        Call<ResponseTiketUpdateStatus> call = service.confirmTiket(idTiket, idUser, idPaket, "Sudah Dibayar");
                         call.enqueue(new Callback<ResponseTiketUpdateStatus>() {
                             @Override
                             public void onResponse(Call<ResponseTiketUpdateStatus> call, Response<ResponseTiketUpdateStatus> response) {
@@ -179,7 +179,7 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.View
                     public void onClick(DialogInterface dialogInterface, int i) {
 //                        Toast.makeText(context, "hapus", Toast.LENGTH_SHORT).show();
                         ApiService apiService = InitLibrary.getInstance();
-                        Call<ResponseTiketUpdateStatus> call = apiService.sendStatusTiket(tiket.get(position).getIdTiket(), tiket.get(position).getIdUser(), tiket.get(position).getIdPaket(), "Belum Dibayar", tiket.get(position).getBukti(), tiket.get(position).getKeteranganBukti());
+                        Call<ResponseTiketUpdateStatus> call = apiService.confirmTiket(tiket.get(position).getIdTiket(), tiket.get(position).getIdUser(), tiket.get(position).getIdPaket(), "Belum Dibayar");
                         call.enqueue(new Callback<ResponseTiketUpdateStatus>() {
                             @Override
                             public void onResponse(Call<ResponseTiketUpdateStatus> call, Response<ResponseTiketUpdateStatus> response) {

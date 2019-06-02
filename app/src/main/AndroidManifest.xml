@@ -16,23 +16,32 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".global.PreviewPhoto"
             android:theme="@style/AppTheme.Fullscreen"/>
-                <activity android:name=".home.KonfirmasiTiket" />
-        <activity android:name=".admin.ListJamaahActivity" />
-        <activity android:name=".admin.JadwalAdminActivity" />
-        <activity android:name=".home.DashboardActivity" />
+                <activity android:name=".home.KonfirmasiTiket"
+                    android:parentActivityName=".home.TiketActivity"/>
+        <activity android:name=".admin.ListJamaahActivity"
+            android:parentActivityName=".home.DashboardActivity"/>
+        <activity android:name=".admin.JadwalAdminActivity"
+            android:parentActivityName=".home.DashboardActivity"/>
+        <activity android:name=".home.DashboardActivity"
+            android:parentActivityName=".home.MainActivity"/>
         <activity
             android:name=".home.JamaahActivtiy"
-            android:label="@string/title_activity_jamaah_activtiy"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".user.ProfilrActivity" />
-        <activity android:name=".admin.ConfirmPaymentActivity" />
-        <activity android:name=".home.DetailJadwalActivity" />
-        <activity android:name=".home.JadwalActivity" />
+            android:parentActivityName=".home.MainActivity"
+            android:label="@string/title_activity_jamaah_activtiy"/>
+        <activity android:name=".user.ProfilrActivity"
+            android:parentActivityName=".home.MainActivity" />
+        <activity android:name=".admin.ConfirmPaymentActivity"
+            android:parentActivityName=".home.DashboardActivity"/>
+        <activity android:name=".home.DetailJadwalActivity"
+            android:parentActivityName=".home.JadwalActivity"/>
+        <activity android:name=".home.JadwalActivity"
+            android:parentActivityName=".home.MainActivity"/>
         <activity
             android:name=".home.TiketActivity"
             android:parentActivityName=".home.MainActivity" />
         <activity
             android:name=".home.PaketActivity"
+            android:theme="@style/AppTheme"
             android:parentActivityName=".home.MainActivity" />
         <activity
             android:name=".user.RegisterActivity"
