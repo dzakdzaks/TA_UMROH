@@ -80,15 +80,15 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.View
         holder.tvName.setText(namaUser);
         holder.tvKeberangkatan.setText("Berangkat " + berangkat);
         holder.tvHarga.setText("Rp." + hargaTiket);
-        if (statusTiket.equals("Belum Dibayar")) {
+        if (statusTiket.equals("0")) {
             holder.tvStatus1.setBackgroundResource(R.drawable.backtext);
             holder.tvStatus2.setPaintFlags(holder.tvStatus1.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             holder.tvStatus3.setPaintFlags(holder.tvStatus1.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        } else if (statusTiket.equals("Di Proses")) {
+        } else if (statusTiket.equals("1")) {
             holder.tvStatus2.setBackgroundResource(R.drawable.backtext);
             holder.tvStatus1.setPaintFlags(holder.tvStatus2.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             holder.tvStatus3.setPaintFlags(holder.tvStatus2.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        } else if (statusTiket.equals("Sudah Dibayar")) {
+        } else if (statusTiket.equals("2")) {
             holder.cardView.setEnabled(false);
             holder.tvStatus3.setBackgroundResource(R.drawable.backtext);
             holder.tvStatus1.setPaintFlags(holder.tvStatus3.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
@@ -112,7 +112,7 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.View
                         String idUser = tiket.get(position).getIdUser();
                         String idPaket = tiket.get(position).getIdPaket();
                         ApiService service = InitLibrary.getInstance();
-                        Call<ResponseTiketUpdateStatus> call = service.confirmTiket(idTiket, idUser, idPaket, "Sudah Dibayar");
+                        Call<ResponseTiketUpdateStatus> call = service.confirmTiket(idTiket, idUser, idPaket, "2");
                         call.enqueue(new Callback<ResponseTiketUpdateStatus>() {
                             @Override
                             public void onResponse(Call<ResponseTiketUpdateStatus> call, Response<ResponseTiketUpdateStatus> response) {
@@ -179,7 +179,7 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.View
                     public void onClick(DialogInterface dialogInterface, int i) {
 //                        Toast.makeText(context, "hapus", Toast.LENGTH_SHORT).show();
                         ApiService apiService = InitLibrary.getInstance();
-                        Call<ResponseTiketUpdateStatus> call = apiService.confirmTiket(tiket.get(position).getIdTiket(), tiket.get(position).getIdUser(), tiket.get(position).getIdPaket(), "Belum Dibayar");
+                        Call<ResponseTiketUpdateStatus> call = apiService.confirmTiket(tiket.get(position).getIdTiket(), tiket.get(position).getIdUser(), tiket.get(position).getIdPaket(), "0");
                         call.enqueue(new Callback<ResponseTiketUpdateStatus>() {
                             @Override
                             public void onResponse(Call<ResponseTiketUpdateStatus> call, Response<ResponseTiketUpdateStatus> response) {

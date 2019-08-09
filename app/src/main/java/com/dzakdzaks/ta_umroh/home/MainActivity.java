@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         session = new UserSession(this);
 
         tvName.setText("Hi, " + session.getSpName());

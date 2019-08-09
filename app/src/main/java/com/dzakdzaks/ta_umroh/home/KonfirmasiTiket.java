@@ -1,7 +1,6 @@
 package com.dzakdzaks.ta_umroh.home;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,9 +14,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -26,7 +23,6 @@ import android.widget.Toast;
 
 import com.dzakdzaks.ta_umroh.R;
 import com.dzakdzaks.ta_umroh.home.response.ResponseTiketUpdateStatus;
-import com.dzakdzaks.ta_umroh.home.response.User;
 import com.dzakdzaks.ta_umroh.retrofit.ApiService;
 import com.dzakdzaks.ta_umroh.retrofit.InitLibrary;
 
@@ -52,12 +48,22 @@ public class KonfirmasiTiket extends AppCompatActivity {
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
 
+    @BindView(R.id.input_no_rek)
+    EditText inputNoRek;
+    @BindView(R.id.input_atas_nama)
+    EditText inputAtasNama;
+    @BindView(R.id.input_nominal)
+    EditText inputNominal;
+    @BindView(R.id.img_photo)
+    ImageView imgPhoto;
+
     Bitmap bitmap;
     private static final int IMAGE = 100;
     private static final int TAKE_PICTURE = 200;
     public static final int RequestPermissionCode = 1;
 
     String idTiket, idUser, idPaket, status, imageBukti, keterangan;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,10 +80,10 @@ public class KonfirmasiTiket extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.imgBukti, R.id.btnUpload})
+    @OnClick({R.id.img_photo, R.id.btnUpload})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.imgBukti:
+            case R.id.img_photo:
                 EnableRuntimePermission();
                 selectImage();
                 break;
@@ -92,10 +98,17 @@ public class KonfirmasiTiket extends AppCompatActivity {
         inputKeterangan.setEnabled(false);
         imgBukti.setEnabled(false);
         btnUpload.setEnabled(false);
-        String ket = inputKeterangan.getText().toString();
+//        String ket = inputKeterangan.getText().toString() + "\n" +
+//                inputNoRek.getText().toString() + "\n" +
+//                inputAtasNama.getText().toString() + "\n" +
+//                "Rp." + inputNominal.getText().toString();
+        String ket = String.valueOf(Html.fromHtml("||  <b>Nama Bank : </b>" + inputKeterangan.getText().toString() + "  <br>||  " +
+                "<b>No Rekening : </b>" + inputNoRek.getText().toString() + "  <br>||  " +
+                "<b>Atas Nama : </b>" + inputAtasNama.getText().toString() + "  <br>||  " +
+                "<b>Nominal : </b>" + inputNominal.getText().toString()));
         String newImage = convertToString();
         ApiService apiService = InitLibrary.getInstance();
-        Call<ResponseTiketUpdateStatus> call = apiService.sendStatusTiket(idTiket, idUser, idPaket, "Di Proses", newImage, ket);
+        Call<ResponseTiketUpdateStatus> call = apiService.sendStatusTiket(idTiket, idUser, idPaket, "1", newImage, ket);
         call.enqueue(new Callback<ResponseTiketUpdateStatus>() {
             @Override
             public void onResponse(Call<ResponseTiketUpdateStatus> call, Response<ResponseTiketUpdateStatus> response) {
@@ -106,7 +119,7 @@ public class KonfirmasiTiket extends AppCompatActivity {
                     imgBukti.setEnabled(true);
                     btnUpload.setEnabled(true);
                     Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-                    onBackPressed();
+                    finish();
                 }
             }
 
@@ -130,7 +143,7 @@ public class KonfirmasiTiket extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int item) {
                 if (items[item].equals("Take Photo")) {
-                    Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(intent, TAKE_PICTURE);
                 } else if (items[item].equals("Choose from Library")) {
                     Intent intent = new Intent();

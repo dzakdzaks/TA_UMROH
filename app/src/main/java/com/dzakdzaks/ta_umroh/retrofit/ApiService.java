@@ -234,6 +234,12 @@ public interface ApiService {
             @Field("id") String a
     );
 
+    @FormUrlEncoded
+    @POST("pembayaran_add.php")
+    Call<ResponseTiket> addPembayaran(
+            @Field("id") String a
+    );
+
 
 
 }

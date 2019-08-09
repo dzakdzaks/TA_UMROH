@@ -69,7 +69,7 @@ public class AdapterTiket extends RecyclerView.Adapter<AdapterTiket.ViewTiketHol
         if (tiket.get(position).getBukti().isEmpty()) {
             holder.img.setVisibility(View.GONE);
             holder.tvKeterangan.setVisibility(View.GONE);
-        } else if (tiket.get(position).getStatus().equals("Belum Dibayar")) {
+        } else if (tiket.get(position).getStatus().equals("0")) {
             holder.img.setVisibility(View.GONE);
             holder.tvKeterangan.setVisibility(View.GONE);
         }
@@ -81,7 +81,7 @@ public class AdapterTiket extends RecyclerView.Adapter<AdapterTiket.ViewTiketHol
         holder.tvTiket.setText("Paket Umroh " + namaTiket);
         holder.tvKeberangkatan.setText("Berangkat " + berangkat);
         holder.tvHarga.setText("Rp." + hargaTiket);
-        if (statusTiket.equals("Belum Dibayar")) {
+        if (statusTiket.equals("0")) {
             holder.tvStatus1.setBackgroundResource(R.drawable.backtext);
             holder.tvStatus2.setPaintFlags(holder.tvStatus1.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             holder.tvStatus3.setPaintFlags(holder.tvStatus1.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
@@ -160,11 +160,11 @@ public class AdapterTiket extends RecyclerView.Adapter<AdapterTiket.ViewTiketHol
                     context.startActivity(i);
                 }
             });
-        } else if (statusTiket.equals("Di Proses")) {
+        } else if (statusTiket.equals("1")) {
             holder.tvStatus2.setBackgroundResource(R.drawable.backtext);
             holder.tvStatus1.setPaintFlags(holder.tvStatus2.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             holder.tvStatus3.setPaintFlags(holder.tvStatus2.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        } else if (statusTiket.equals("Sudah Dibayar")) {
+        } else if (statusTiket.equals("2")) {
             holder.tvStatus3.setBackgroundResource(R.drawable.backtext);
             holder.tvStatus1.setPaintFlags(holder.tvStatus3.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             holder.tvStatus2.setPaintFlags(holder.tvStatus3.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);

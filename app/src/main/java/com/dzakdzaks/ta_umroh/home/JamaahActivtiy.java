@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,11 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.dzakdzaks.ta_umroh.R;
 import com.dzakdzaks.ta_umroh.home.response.PaketItem;
@@ -26,8 +22,6 @@ import com.dzakdzaks.ta_umroh.home.response.ResponseAddJamaah;
 import com.dzakdzaks.ta_umroh.home.response.ResponseEditJamaah;
 import com.dzakdzaks.ta_umroh.home.response.ResponseGetJamaah;
 import com.dzakdzaks.ta_umroh.home.response.ResponsePaket;
-import com.dzakdzaks.ta_umroh.home.response.ResponseTiket;
-import com.dzakdzaks.ta_umroh.home.response.Tiket;
 import com.dzakdzaks.ta_umroh.home.response.User;
 import com.dzakdzaks.ta_umroh.retrofit.ApiService;
 import com.dzakdzaks.ta_umroh.retrofit.InitLibrary;
@@ -49,7 +43,7 @@ import retrofit2.Response;
 
 public class JamaahActivtiy extends AppCompatActivity {
 
-//    @BindView(R.id.toolbar)
+    //    @BindView(R.id.toolbar)
 //    Toolbar toolbar;
     @BindView(R.id.edtNoKTP)
     EditText edtNoKTP;
@@ -100,7 +94,6 @@ public class JamaahActivtiy extends AppCompatActivity {
         ButterKnife.bind(this);
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
-
         setView();
     }
 
@@ -454,7 +447,6 @@ public class JamaahActivtiy extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
 
 
         ApiService apiService = InitLibrary.getInstance();
